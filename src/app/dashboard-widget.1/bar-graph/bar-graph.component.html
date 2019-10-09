@@ -1,0 +1,35 @@
+
+<div class="mat-elevation-z8">
+  <div class="profile-card-holder">
+    <div fxLayout="column" >
+        <div fxLayout="row" fxLayoutAlign="space-around"  >
+            <div class="banner">
+                 <img width="200" [style.borderRadius]="'50%'" src="./assets/user-image.jpg">
+            </div>
+        </div>
+         <div class="profile-details mat-elevation-z8" >
+            <span class="pull-right">
+            <button mat-icon-button>
+              <mat-icon mat-icon (click)="openDialog()">edit</mat-icon>
+            </button></span>
+            <div fxLayout="column" class="profile-details-holder">
+                <h1> <span class="tab">HariKrishna S</span>
+                     <span class="tab2">Language:English.Tamil</span>
+                </h1>
+                <h2> <span class="tab1">Senior Lawyer</span>
+                     <span class="tab3">Rating:<mat-icon class="tab5">star_rate</mat-icon>
+                      <mat-icon class="tab5">star_rate</mat-icon>
+                      <mat-icon class="tab5">star_rate</mat-icon>
+                      <mat-icon class="tab5">star_rate</mat-icon>
+                      <mat-icon >star_rate</mat-icon>
+                    </span>
+                </h2> 
+                <h2><span class="left-align"><mat-icon>location_on</mat-icon> Chennai</span> 
+                  <span class="right-align">Experience: 5 Years</span></h2>              
+            </div>
+        </div>        
+    </div>
+  </div>
+</div> 
+      
+ 

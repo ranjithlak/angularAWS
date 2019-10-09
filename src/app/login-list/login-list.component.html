@@ -1,0 +1,69 @@
+<!-- <div class="row" style="margin-top:40px; background-color:#F7C183;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);"> -->
+
+<!-- nav -->
+
+<nav class="no-border navbar-expand-sm navbar-dark bg-dark mb-3">
+
+            <a class="page-content no-nav-brand" href="#">Advocate Portal </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="no-navvbar navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login-list/welcome" ><i class="material-icons vertical-align-bottom" >home</i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" *ngIf="!isAuthenticated" routerLinkActive="active" routerLink="/login-list/login"><i class="material-icons">perm_identity</i>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" *ngIf="!isAuthenticated" routerLinkActive="active" routerLink="/login-list/register"><i class="material-icons"> person_add</i>Register</a>
+                    </li>
+                    
+                </ul>
+
+                <form class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-2" placeholder="Search">
+                    <button class="btn btn-outline-success">Search</button>
+                </form>
+            </div>
+       
+    </nav>
+
+<!-- nav -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav> -->
+
+<!-- main app container -->
+<!-- <div class="jumbotron" style="background-color:#F7C183;"> -->
+
+    <div class="container">
+        <div class="row">
+           
+                <alert></alert>
+                <router-outlet></router-outlet>
+            
+        </div>
+    </div>
+
+<!-- </div> -->
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= yield %>          
+      </div>
+    </div>
+  </div> -->
+
+  
+  
+

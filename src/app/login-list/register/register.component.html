@@ -1,0 +1,172 @@
+﻿<div class="container">
+    <div class="row" *ngIf="didFail">
+        <div class="col-xs-12 col-sm-10 col-md-6 cold-sm-offset-1 col-md-offset-3 text-center">
+          <div class="alert alert-danger">Something went wrong, please try again!</div>
+        </div>
+      </div>
+    
+ <div class="row" >
+ <div class="col-sm-6 offset-sm-3">
+<h2>Register</h2>
+<mat-card>
+  <form class="form-group" (ngSubmit)="onSubmit()" #usrForm="ngForm">
+   
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="firstName"
+        placeholder="First Name"
+        id="firstName"
+        name="firstName"
+        ngModel
+        class="form-control"
+        required
+      >
+     </mat-form-field>
+     
+    
+   
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="lastName"
+        placeholder="Last Name"
+        id="lastName"
+        name="lastName"
+        ngModel
+        class="form-control"
+        required
+      >
+    </mat-form-field>
+   
+    
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="email"
+        placeholder="E-Mail"
+        id="email"
+        name="email"
+        ngModel
+        class="form-control"
+        required
+        >
+    </mat-form-field>
+    
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="username"
+        placeholder="Username"
+        id="username"
+        name="username"
+        ngModel
+        class="form-control"
+        required
+      >
+    </mat-form-field>
+   
+    
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="password"
+        placeholder="Password"
+        id="password"
+        type="password"
+        name="password"
+        ngModel
+        class="form-control"
+       
+      >
+    </mat-form-field>
+    
+    
+    <mat-form-field class="fullwidth">
+      <input
+        matInput
+        for="mobile"
+        placeholder="Mobile Number"
+        id="mobile"
+        name="mobile"
+        ngModel
+        class="form-control"
+        required
+      >
+      
+    </mat-form-field>
+    
+    <div>
+      <!-- <button mat-raised-button  >Register</button>   -->
+     
+      <button [disabled]="loading" [disabled]="(usrForm.value.eMail !== usrForm.value.cnfEmail) || usrForm.invalid" mat-raised-button color="primary">
+        Register
+      </button>
+      <hr>
+      <div class="row" *ngIf="!confirmUser">
+          <button mat-raised-button color="primary" (click)="onDoConfirm()">Confirm User</button>
+       </div> 
+      <img
+        *ngIf="loading"
+        class="pl-3"
+        src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+      />
+         
+    
+      <div class="float-right">
+        <a routerLink="/login-list/login">Cancel</a>
+      </div>
+    </div>
+  </form>
+</mat-card>
+</div>
+</div>
+</div>
+
+<br>
+
+  <div class="row" *ngIf="confirmUser">
+    <div class="col-sm-6 offset-sm-3">
+        <mat-card>
+    
+      <form class="form-group" #confirmForm="ngForm" (ngSubmit)="onConfirm(confirmForm.value)" >
+       
+         <mat-form-field class="fullwidth">
+                <input
+                  matInput
+                  for="username"
+                  placeholder="Username"
+                  id="username"
+                  name="username"
+                  ngModel
+                  class="form-control"
+                  required
+                >
+          </mat-form-field>
+          <mat-form-field class="fullwidth">
+          <input
+            matInput
+            for="validationCode"
+            placeholder="ValidationCode"
+            id="validationCode"
+            name="validationCode"
+            ngModel
+            class="form-control"
+            required>
+          </mat-form-field>
+        <button class="btn btn-primary" type="submit" [disabled]="confirmForm.invalid">Confirm your Account</button>
+     
+      <div  *ngIf="loading"
+      class="pl-3"
+      src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+      ></div>
+    </form>
+    </mat-card>
+    </div>
+    </div>
+  
+    
+  
+  
+
+

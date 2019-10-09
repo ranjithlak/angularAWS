@@ -1,0 +1,45 @@
+﻿<div class="row" *ngIf="didFail">
+  <div class="col-xs-12 col-sm-10 col-md-6 cold-sm-offset-1 col-md-offset-3 text-center">
+    <div class="alert alert-danger">Something went wrong, please try again!</div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-sm-11 offset-sm-8">
+        <h2>Login</h2>
+    <mat-card>
+    <form class="form-group" (ngSubmit)="onSubmit()" #usrForm="ngForm">
+      
+        <mat-form-field class="fullwidth">
+        <input
+         matInput
+         for="username"
+         placeholder="Username"
+          type="text"
+          id="username"
+          name="username"
+          ngModel
+          class="form-control "
+          required>
+        </mat-form-field>
+     
+        <mat-form-field class="fullwidth">
+        <input
+          matInput
+          for="password"
+          placeholder="password"
+          type="password"
+          id="password"
+          name="password"
+          ngModel
+          class="form-control "
+          required>
+        </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="usrForm.invalid">Submit</button>
+    </form>
+      </mat-card>
+    </div>
+ </div>
+
+    <div class="loader" *ngIf="loading"></div>
+  
+

@@ -1,0 +1,51 @@
+<div class="mat-elevation-z8">
+        <mat-toolbar >  
+       <mat-toolbar-row class="rab">
+         <span><button mat-raised-button color="primary">Reviews </button></span>
+           
+                  
+       </mat-toolbar-row>
+       </mat-toolbar>
+       <h3 class="tab9">Ranjithkumar:</h3>
+       <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box">
+                <div class="tab8">
+                Very cooperative & have a good understanding on every issues.
+                </div>  
+            </div>
+          </div>
+          <h3 class="tab9">kumar:</h3>
+          <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+               <div class="example-box">
+                   <div class="tab8">
+                        The lawyer was an expert in my legal issue. The lawyer gave me the right guidance. The lawyer helped me in taking the right decision going forward. Excellent
+                   </div>  
+               </div>
+             </div>  
+     
+            
+      
+       <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header align="end" >
+                  <div class="tab7">
+                    <button mat-raised-button color="primary"> More</button>
+                </div>
+             </mat-expansion-panel-header>
+             <h3>Vinoth:</h3>
+             <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                  <div class="example-box">
+                      <div class="tab8">
+                            The lawyer helped me in taking the right decision going forward.
+                      </div>  
+                  </div>
+                </div> 
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              
+            
+            </mat-expansion-panel>
+          </mat-accordion>
+        
+</div>

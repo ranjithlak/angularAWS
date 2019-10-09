@@ -1,0 +1,22 @@
+.mat-elevation-z8 {
+    margin: 25px 5px;
+    background-color:white;
+    border: 1px solid black;
+}
+.cardInner {
+    display: grid;
+    grid-template-areas:  "side content" ;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    margin-right:2px
+  }
+  .profile1{
+     margin-left: 25px
+  }
+  .profile2{
+    margin-left: 50px
+  }
+  .profile3{
+      margin-right:5px
+  }

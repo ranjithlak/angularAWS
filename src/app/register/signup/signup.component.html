@@ -1,0 +1,32 @@
+<div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+
+    <div fxLayout="column" >
+   
+        <div class=" mat-elevation-z4">
+            <mat-card>
+                <mat-card-title class="tab11">
+                    Login
+                </mat-card-title>
+                <mat-card-content>
+                    <form fxLayout="column" fxLayoutAlign="start stretch" >
+                        <mat-form-field appearance="outline">
+                            <mat-label>UserName</mat-label>
+                            <input matInput placeholder="Placeholder">
+                           
+                          
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            
+                            <input matInput placeholder="Placeholder" [type]="hide ? 'password' : 'text'">
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" type="submit"  (click)="login()">log In</button>
+                        
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="container">
+ <div class="mat-elevation-z8">
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    <div class="cardInner">
+    <div [style.grid-area]="'side'">
+      <mat-form-field appearance="outline">
+          <mat-label  >{{this.authenticationService.getCognitoFirstName()}}</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+          <mat-label>{{this.authenticationService.getCognitoLastName()}}</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+          <mat-label>{{this.authenticationService.getCognitoEmail()}}</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+          <mat-label>{{this.authenticationService.getCognitoUsername()}}</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      <br>
+    </div>
+ 
+  <div [style.grid-area]="'content'">
+      <div fxLayout="column" >
+          <div  fxLayoutAlign="space-around center" >
+            
+            <img width="200" [style.borderRadius]="'50%'" src="{{this.authenticationService.imageurl()}}"
+             />
+            </div>
+         
+          <br>
+          <div>
+            <input type="file" (change)="selectFile($event)">>
+           
+            <button class="profile1"  [disabled]="!selectedFiles" (click)="upload()" mat-raised-button color="primary">Upload</button>
+            
+            <button class="profile2" mat-raised-button color="primary">Delete</button>
+         </div>
+          
+         
+  </div>
+  </div> 
+  </div>   
+     
+  
+      
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+</div>
